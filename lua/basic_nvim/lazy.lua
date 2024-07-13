@@ -1,5 +1,5 @@
 -- bootstrap lazy.nvim!
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = "$HOME/.local/share/nvim/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   --------- install lazy.nvim if not already installed ---------------
   local repo = "https://github.com/folke/lazy.nvim.git"

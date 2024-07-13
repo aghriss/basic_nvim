@@ -7,7 +7,7 @@ return {
       require("base46").compile()
     end,
     opts = {
-      custom_themes_path = vim.fn.stdpath("config") .. "/assets/themes",
+      custom_themes_path = "$HOME/.config/nvim/assets/themes",
       theme1 = "dark",
       transparency = true,
       -- transparency = false,
