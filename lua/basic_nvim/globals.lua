@@ -45,7 +45,7 @@ opt.timeoutlen = 700
 opt.whichwrap:append("<>[]hl")
 opt.swapfile = false
 opt.backup = false
-opt.undodir = "$HOME/.local/state/nvim/undotree"
+opt.undodir = vim.fn.stdpath("state") .. "/undotree"
 opt.undofile = true
 
 --cursor blinking
@@ -62,6 +62,10 @@ for _, provider in ipairs({ "node", "perl", "ruby" }) do
   vim.g["loaded_" .. provider .. "_provider"] = 0
 end
 
+vim.g.python3_host_prog = vim.fn.stdpath("data") .. "/venv/bin/python3"
+
+-- add binaries installed by mason.nvim to path
+vim.env.PATH = vim.fn.stdpath("data") .. "/venv/bin/" .. ":" .. vim.env.PATH
 ---------------------------- autocmds ------------------------------------------
 -- dont list quickfix buffers
 vim.api.nvim_create_autocmd("FileType", {
